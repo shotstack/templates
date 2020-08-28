@@ -6,6 +6,7 @@ const font = require('./font');
 const clip = require('./clip');
 const track = require('./track');
 const html = require('./assets/html');
+const image = require('./assets/image');
 const video = require('./assets/video');
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
     track,
     assets: {
         html,
+        image,
         video
     }
 }
