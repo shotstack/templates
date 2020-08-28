@@ -6,6 +6,7 @@ const font = require('./font');
 const clip = require('./clip');
 const track = require('./track');
 const html = require('./assets/html');
+const video = require('./assets/video');
 
 module.exports = {
     edit,
@@ -16,6 +17,7 @@ module.exports = {
     clip,
     track,
     assets: {
-        html
+        html,
+        video
     }
 }
