@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('fs').promises;
 
 const BUILD_PATH = './build/';
 const JSON_EXTENSION = '.json';
@@ -18,14 +18,12 @@ const getJson = (data) => {
     return JSON.stringify(removeEmptyOrNull(data), null, 2)
 }
 
-const makeDirectory = (directory) => {
-    fs.mkdir(BUILD_PATH + directory, { recursive: true }, (err) => {
-        if (err) throw err;
-    });
+const makeDirectory = async (directory) => {
+    await fs.mkdir(BUILD_PATH + directory, { recursive: true });
 }
 
-const writeFile = (path, json) => {
-    fs.writeFileSync(path, json);
+const writeFile = async (path, json) => {
+    await fs.writeFile(path, json);
 }
 
 module.exports.output = (data) => {
