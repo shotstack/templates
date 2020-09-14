@@ -5,8 +5,10 @@ const soundtrack = require('./soundtrack');
 const font = require('./font');
 const clip = require('./clip');
 const track = require('./track');
+const audio = require('./assets/audio');
 const html = require('./assets/html');
 const image = require('./assets/image');
+const luma = require('./assets/luma');
 const video = require('./assets/video');
 
 module.exports = {
@@ -18,8 +20,10 @@ module.exports = {
     clip,
     track,
     assets: {
+        audio,
         html,
         image,
+        luma,
         video
     }
 }
