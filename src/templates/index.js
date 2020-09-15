@@ -12,5 +12,6 @@ module.exports = {
         'basic.sd',
         'fill.sd',
         'strip.sd',
+        'color.sd',
     ]
 };
