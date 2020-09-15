@@ -11,7 +11,8 @@ const generateTemplateJson = () => {
         `<p>You can clearly see that PHP is the most popular programming language.</p>`,
         `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
         650,
-        80
+        80,
+        '#77000000'
     );
     const subtitleClip1 = core.clip(subtitleAsset1, 0, 3, null, null, 'bottom', 0, 0.1);
 
@@ -19,7 +20,8 @@ const generateTemplateJson = () => {
         `<p>If you examine this chart I think you'll find it's NodeJS.</p>`,
         `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
         650,
-        80
+        80,
+        '#77000000'
     );
     const subtitleClip2 = core.clip(subtitleAsset2, 3.5, 4, null, null, 'bottom', 0.0, 0.1);
 
@@ -27,7 +29,8 @@ const generateTemplateJson = () => {
         `<p>Well, common sense would indicate Java is the most popular.</p>`,
         `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
         650,
-        80
+        80,
+        '#77000000'
     );
     const subtitleClip3 = core.clip(subtitleAsset3, 8, 3, null, null, 'bottom', 0.0, 0.1);
 
@@ -35,7 +38,8 @@ const generateTemplateJson = () => {
         `<p>Java? Do you mean JavaScript?</p>`,
         `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
         650,
-        80
+        80,
+        '#77000000'
     );
     const subtitleClip4 = core.clip(subtitleAsset4, 11.5, 3, null, null, 'bottom', 0.0, 0.1);
 
@@ -43,7 +47,8 @@ const generateTemplateJson = () => {
         `<p>F*#k You!</p>`,
         `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
         650,
-        80
+        80,
+        '#77000000'
     );
     const subtitleClip5 = core.clip(subtitleAsset5, 14.5, 2, null, null, 'bottom', 0.0, 0.1);
     

@@ -3,12 +3,14 @@ module.exports = {
         'hello-world-html',
         'hello-world-html-font',
         'simple-video-edit',
-        'simple-image-edit'
+        'simple-image-edit',
     ],
     podcast: [
-        'finance.sd'
+        'finance.sd',
     ],
     subtitle: [
-        'basic.sd'
+        'basic.sd',
+        'fill.sd',
+        'strip.sd',
     ]
 };
