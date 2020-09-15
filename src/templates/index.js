@@ -7,5 +7,8 @@ module.exports = {
     ],
     podcast: [
         'finance.sd'
+    ],
+    subtitle: [
+        'basic.sd'
     ]
 };
