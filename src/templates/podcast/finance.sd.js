@@ -1,6 +1,7 @@
 'use strict'
 
 const core = require('../../core');
+const Title = require('../../components/Title');
 const { openSans, openSansBold, openSansExtraBold } = require('../../consts/fonts');
 
 const CLIP_LENGTH = 10;
@@ -27,49 +28,55 @@ const generateTemplateJson = () => {
     const lowerThirdClip = core.clip(lowerThirdAsset, 0, CLIP_LENGTH, 'none', 0.7, 'topLeft', -0.16, -0.15, 'carouselRight');
     const lowerThirdTrack = core.track([lowerThirdClip]);
 
-    const titleAsset = core.assets.html(
-        `<p>The Finance Show</p>`,
-        `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 34px; text-align: left; }`,
-        450,
-        100
-    );
-    const titleClip = core.clip(titleAsset, 0.2, CLIP_LENGTH - 0.2, null, null, 'topLeft', 0.05, -0.118, 'slideRight');
+    const title = new Title('The Finance Show', 450, 100, {
+        font: openSans.family,
+        color: '#ffffff',
+        size: '34px',
+        align: 'left'
+    });
+
+    const titleClip = core.clip(title.asset, 0.2, CLIP_LENGTH - 0.2, null, null, 'topLeft', 0.05, -0.118, 'slideRight');
     const titleTrack = core.track([titleClip]);
 
     /**
      * Main Heading
      */
-    const headingAsset = core.assets.html(
-        `<p>Podcast Heading</p>`,
-        `p { font-family: "${openSansExtraBold.family}"; color: #ffffff; font-size: 38px; text-align: left; }`,
-        450,
-        100
-    );
-    const headingClip = core.clip(headingAsset, 0.1, CLIP_LENGTH - 0.1, null, null, 'left', 0.05, 0.1, 'slideLeft');
+    const heading = new Title('Podcast Heading', 450, 100, {
+        font: openSansExtraBold.family,
+        color: '#ffffff',
+        size: '38px',
+        align: 'left'
+    });
+
+    const headingClip = core.clip(heading.asset, 0.1, CLIP_LENGTH - 0.1, null, null, 'left', 0.05, 0.1, 'slideLeft');
     const headingTrack = core.track([headingClip]);
 
     /**
      * Guest Name
      */
-    const guestAsset = core.assets.html(
-        `<p>Mr John Smith</p>`,
-        `p { font-family: "${openSansBold.family}"; color: #d2bb8f; font-size: 28px; text-align: left; font-weight: ${openSansBold.style} }`,
-        400,
-        50
-    );
-    const guestClip = core.clip(guestAsset, 0.2, CLIP_LENGTH - 0.2, null, null, 'left', 0.05, 0, 'slideLeft');
+    const guest = new Title('Mr John Smith', 400, 50, {
+        font: openSansBold.family,
+        color: '#d2bb8f',
+        size: '28px',
+        align: 'left',
+        bold: true
+    });
+
+    const guestClip = core.clip(guest.asset, 0.2, CLIP_LENGTH - 0.2, null, null, 'left', 0.05, 0, 'slideLeft');
     const guestTrack = core.track([guestClip]);
 
     /**
      * Guest Subtitle
      */
-    const guestSummaryAsset = core.assets.html(
-        `<p>Head of Global Derivatives, Eagle Corporate</p>`,
-        `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 22px; text-align: left; line-height: 65%; }`,
-        500,
-        40
-    );
-    const guestSummaryClip = core.clip(guestSummaryAsset, 0.3, CLIP_LENGTH - 0.3, null, null, 'left', 0.05, -0.05, 'slideLeft');
+    const summary = new Title('Head of Global Derivatives, Eagle Corporate', 500, 40, {
+        font: openSans.family,
+        color: '#ffffff',
+        size: '22px',
+        align: 'left',
+        lineHeight: '65%'
+    });
+
+    const guestSummaryClip = core.clip(summary.asset, 0.3, CLIP_LENGTH - 0.3, null, null, 'left', 0.05, -0.05, 'slideLeft');
     const guestSummaryTrack = core.track([guestSummaryClip]);
 
     /**

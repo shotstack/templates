@@ -90,3 +90,58 @@ subtitles.addSubtitle(`<p>This is the second subtitle</p>`, 5, 5);
 
 const track = subtitles.getTrack();
 ```
+
+### Title
+
+Create a text title asset
+
+#### `const title = new Title(text, width, height, options);`
+
+##### Params
+
+| Argument | Type | Description |
+|----------|------|-------------|
+| title | string | The title text |
+| width | integer | width in pixels of the subtitle container |
+| height | integer | height in pixels of the subtitle container |
+| options | object | Title formatting options |
+
+##### Options
+
+`font`: text font
+
+`color`: text colour using hex notation
+
+`size`: text size in pixels (px) or points (pt)
+
+`align`: horizontal alignment, `left`, `right` or `center`
+
+`bold`: set to `true` to make text bold
+
+`underline`: set to `true` to underline text
+
+`italic`: set to `true` to make text italic
+
+`lineHeight`: adjust line-height using %
+
+
+#### `getter - asset`
+
+Get the title asset to use in a clip, i.e.
+
+```
+const asset = title.asset
+```
+
+#### Example
+
+```
+const title = new Title('Video Heading', 450, 100, {
+    font: 'Open Sans',
+    color: '#ffffff',
+    size: '24px',
+    align: 'left'
+});
+
+const asset = title.asset;
+```
