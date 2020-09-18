@@ -2,6 +2,7 @@
 
 const core = require('../../core');
 const Title = require('../../components/Title');
+const Panel = require('../../components/Panel');
 const { openSans, openSansBold, openSansExtraBold } = require('../../consts/fonts');
 
 const CLIP_LENGTH = 10;
@@ -24,8 +25,10 @@ const generateTemplateJson = () => {
     /**
      * Lower Third and Title
      */
-    const lowerThirdAsset = core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/lower-thirds/static/banner-gold.png');
-    const lowerThirdClip = core.clip(lowerThirdAsset, 0, CLIP_LENGTH, 'none', 0.7, 'topLeft', -0.16, -0.15, 'carouselRight');
+    const panel = new Panel(420, 64, '#d2bb8f');
+
+    const lowerThirdAsset = panel.asset; //core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/lower-thirds/static/banner-gold.png');
+    const lowerThirdClip = core.clip(lowerThirdAsset, 0, CLIP_LENGTH, null, null, 'topLeft', 0, -0.15, 'carouselRight');
     const lowerThirdTrack = core.track([lowerThirdClip]);
 
     const title = new Title('The Finance Show', 450, 100, {
