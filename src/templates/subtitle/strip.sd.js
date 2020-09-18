@@ -27,12 +27,10 @@ const generateTemplateJson = () => {
     /**
      * Strip
      */
-    const stripWidth = width + 24;
-    const stripHeight = height;
-    const stripColor = '#000000';
+    let panel = new Panel(width + 24, height, '#000000');
 
-    let panel = new Panel(stripWidth, stripHeight, stripColor, 0, 17, position);
-    const stripTrack = panel.getTrack();
+    const stripClip = core.clip(panel.asset, 0, 17, null, null, 'bottom');
+    const stripTrack = core.track([stripClip]);
 
     /**
      * Video
