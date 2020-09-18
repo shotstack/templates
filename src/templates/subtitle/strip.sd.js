@@ -1,53 +1,27 @@
 'use strict'
 
 const core = require('../../core');
+const Subtitles = require('../../components/Subtitles');
 const { openSans } = require('../../consts/fonts');
 
 const generateTemplateJson = () => {
     /**
      * Subtitles
      */
-    const subtitleAsset1 = core.assets.html(
-        `<p>You can clearly see that PHP is the most popular programming language.</p>`,
-        `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
-        1000,
-        80
-    );
-    const subtitleClip1 = core.clip(subtitleAsset1, 0, 3, null, null, 'bottom');
+    const width = 1000;
+    const height = 80;
+    const css = `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`;
+    const position = 'bottom';
 
-    const subtitleAsset2 = core.assets.html(
-        `<p>If you examine this chart I think you'll find it's NodeJS.</p>`,
-        `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
-        1000,
-        80
-    );
-    const subtitleClip2 = core.clip(subtitleAsset2, 3.5, 4, null, null, 'bottom');
+    let subtitles = new Subtitles(width, height, css, position);
 
-    const subtitleAsset3 = core.assets.html(
-        `<p>Well, common sense would indicate Java is the most popular.</p>`,
-        `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
-        1000,
-        80
-    );
-    const subtitleClip3 = core.clip(subtitleAsset3, 8, 3, null, null, 'bottom');
-
-    const subtitleAsset4 = core.assets.html(
-        `<p>Java? Do you mean JavaScript?</p>`,
-        `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
-        1000,
-        80
-    );
-    const subtitleClip4 = core.clip(subtitleAsset4, 11.5, 3, null, null, 'bottom');
-
-    const subtitleAsset5 = core.assets.html(
-        `<p>F*#k You!</p>`,
-        `p { font-family: "${openSans.family}"; color: #ffffff; font-size: 24px; }`,
-        1000,
-        80
-    );
-    const subtitleClip5 = core.clip(subtitleAsset5, 14.5, 2, null, null, 'bottom');
+    subtitles.addSubtitle(`<p>You can clearly see that PHP is the most popular programming language.</p>`, 0, 3);
+    subtitles.addSubtitle(`<p>If you examine this chart I think you'll find it's NodeJS.</p>`, 3.5, 4);
+    subtitles.addSubtitle(`<p>Well, common sense would indicate Java is the most popular.</p>`, 8, 3);
+    subtitles.addSubtitle(`<p>Java? Do you mean JavaScript?</p>`, 11.5, 3);
+    subtitles.addSubtitle(`<p>F*#k You!</p>`, 14.5, 2);
     
-    const subtitleTrack = core.track([subtitleClip1, subtitleClip2, subtitleClip3, subtitleClip4, subtitleClip5]);
+    const subtitleTrack = subtitles.getTrack();
 
     /**
      * Strip
