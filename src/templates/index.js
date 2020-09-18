@@ -10,6 +10,7 @@ module.exports = {
     ],
     slideshow: [
         'carousel.sd',
+        'carousel-vertical.sd',
     ],
     subtitle: [
         'basic.sd',
