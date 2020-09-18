@@ -24,7 +24,7 @@ const generateTemplateJson = () => {
     subtitles.addSubtitle(`<p>Java? Do you mean JavaScript?</p>`, 11.5, 3);
     subtitles.addSubtitle(`<p>F*#k You!</p>`, 14.5, 2);
     
-    const subtitleTrack = subtitles.getTrack();
+    const subtitleTrack = subtitles.track;
 
     /**
      * Video

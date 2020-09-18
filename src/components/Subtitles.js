@@ -11,7 +11,7 @@ module.exports = class Subtitles {
         this.x = x;
         this.y = y;
         this.background = background;
-        this.track = [];
+        this.clips = [];
     }
 
     addSubtitle(html, start, length) {
@@ -24,11 +24,11 @@ module.exports = class Subtitles {
         );
         const subtitleClip = core.clip(subtitleAsset, start, length, null, null, this.position, this.x, this.y);
 
-        this.track.push(subtitleClip)
+        this.clips.push(subtitleClip)
     }
 
-    getTrack() {
-        const subtitleTrack = core.track(this.track);
+    get track() {
+        const subtitleTrack = core.track(this.clips);
 
         return subtitleTrack;
     }

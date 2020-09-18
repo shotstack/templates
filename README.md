@@ -78,9 +78,13 @@ Adds a subtitle element, a line of text to display for a given period of time.
 | start | float | the start point, in seconds, on the timeline |
 | length | float | the number of seconds the subtitle should play for |
 
-#### `getTrack()`
+#### `getter - track`
 
-Fetches all the subtitle information as a track ready to be used by core.track().
+Generates and returns the subtitles track for use in a `core.track`.
+
+```
+const asset = title.asset
+```
 
 #### Example
 
@@ -90,7 +94,7 @@ let subtitles = new Subtitles(650, 80, `p { font-family: "Open Sans"; }`, 'botto
 subtitles.addSubtitle(`<p>This is the first subtitle</p>`, 0, 5);
 subtitles.addSubtitle(`<p>This is the second subtitle</p>`, 5, 5);
 
-const track = subtitles.getTrack();
+const track = subtitles.track;
 ```
 
 ---

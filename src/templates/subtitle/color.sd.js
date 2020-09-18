@@ -23,7 +23,7 @@ const generateTemplateJson = () => {
     subtitles.addSubtitle(`<p>Code coverage has dropped 0.2 percent</p>`, 6, 2.6);
     subtitles.addSubtitle(`<p>AND you are using tabs instead of spaces</p>`, 9, 3);
     
-    const subtitleTrack = subtitles.getTrack();
+    const subtitleTrack = subtitles.track;
 
     /**
      * Video
