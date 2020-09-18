@@ -44,6 +44,8 @@ let panel = new Panel(1024, 720, '#7027D8', 0, 5);
 const track = panel.getTrack();
 ```
 
+------
+
 ### Subtitles
 
 Create subtitles
@@ -91,6 +93,8 @@ subtitles.addSubtitle(`<p>This is the second subtitle</p>`, 5, 5);
 const track = subtitles.getTrack();
 ```
 
+------------
+
 ### Title
 
 Create a text title asset
@@ -102,8 +106,8 @@ Create a text title asset
 | Argument | Type | Description |
 |----------|------|-------------|
 | title | string | the title text |
-| width | integer | width in pixels of the subtitle container |
-| height | integer | height in pixels of the subtitle container |
+| width | integer | width in pixels of the text area |
+| height | integer | height in pixels of the text area |
 | options | object | title formatting options |
 
 ##### Options
