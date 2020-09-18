@@ -2,6 +2,7 @@
 
 const core = require('../../core');
 const Subtitles = require('../../components/Subtitles');
+const Panel = require('../../components/Panel');
 const { openSans } = require('../../consts/fonts');
 
 const generateTemplateJson = () => {
@@ -26,15 +27,12 @@ const generateTemplateJson = () => {
     /**
      * Strip
      */
-    const stripAsset = core.assets.html(
-        `<p>&nbsp;</p>`,
-        null,
-        1024,
-        80,
-        '#000000'
-    );
-    const stripClip = core.clip(stripAsset, 0, 17, null, null, 'bottom');
-    const stripTrack = core.track([stripClip]);
+    const stripWidth = width + 24;
+    const stripHeight = height;
+    const stripColor = '#000000';
+
+    let panel = new Panel(stripWidth, stripHeight, stripColor, 0, 17, position);
+    const stripTrack = panel.getTrack();
 
     /**
      * Video

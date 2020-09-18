@@ -2,7 +2,7 @@
 
 const core = require('../core');
 
-module.exports = class Subtitle {
+module.exports = class Subtitles {
     constructor(width, height, css, position = null, x = null, y = null, background = null) {
         this.width = width;
         this.height = height;
