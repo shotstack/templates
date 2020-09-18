@@ -44,7 +44,7 @@ let panel = new Panel(1024, 720, '#7027D8', 0, 5);
 const track = panel.getTrack();
 ```
 
-------
+---
 
 ### Subtitles
 
@@ -93,7 +93,7 @@ subtitles.addSubtitle(`<p>This is the second subtitle</p>`, 5, 5);
 const track = subtitles.getTrack();
 ```
 
-------------
+---
 
 ### Title
 
