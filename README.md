@@ -16,6 +16,58 @@ All the core editing features here
 
 ## Components
 
+### Carousel
+
+Create a carousel style animation using images, video and text clips
+
+#### `const carousel = new Carousel(interval, direction, delay, startOnFirstAsset, finishOnLastAsset);`
+
+##### Params
+
+| Argument | Type | Description |
+|----------|------|-------------|
+| interval | float | the interval between each carousel transition |
+| direction | string | the direction to scroll the carousel, one of `left`, `right`, `up`, `down` |
+| delay | float | the delay between transitions, from when an asset transitions off-screen and a new asset transition on to screen |
+| startOnFirstAsset | boolean | set to `false` to start with the first asset off-screen |
+| finishOnLastAsset | boolean | set to `false` to finish with the last asset off-screen  |
+
+#### `addAsset(asset)`
+
+Add an asset to the carousel, assets are displayed in the order they are added.
+
+```
+const asset = core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/happy1.jpg');
+carousel.addAsset(core.assets.image(asset));
+```
+
+##### Params
+
+| Argument | Type | Description |
+|----------|------|-------------|
+| asset | core.assets | add an asset to the collection of assets in the carousel |
+
+#### `getter - track`
+
+Generates and returns the carousel track for use in a `core.track`.
+
+```
+const track = carousel.track;
+```
+
+#### Example
+
+```
+let subtitles = new Subtitles(650, 80, `p { font-family: "Open Sans"; }`, 'bottom', 0, 0.01);
+
+subtitles.addSubtitle(`<p>This is the first subtitle</p>`, 0, 5);
+subtitles.addSubtitle(`<p>This is the second subtitle</p>`, 5, 5);
+
+const track = subtitles.track;
+```
+
+---
+
 ### Panel
 
 Create a solid rectangle block of colour.
@@ -34,7 +86,7 @@ Create a solid rectangle block of colour.
 Generates and returns the asset for use in a `core.clip`.
 
 ```
-const asset = panel.asset
+const asset = panel.asset;
 ```
 
 #### Example
@@ -70,6 +122,10 @@ Create the subtitle component shared by all subtitle text elements.
 
 Adds a subtitle element, a line of text to display for a given period of time.
 
+```
+subtitles.addSubtitle(`<p>This is a subtitle.</p>`, 0, 3);
+```
+
 ##### Params
 
 | Argument | Type | Description |
@@ -83,7 +139,7 @@ Adds a subtitle element, a line of text to display for a given period of time.
 Generates and returns the subtitles track for use in a `core.track`.
 
 ```
-const track = subtitles.track
+const track = subtitles.track;
 ```
 
 #### Example
@@ -133,7 +189,7 @@ Create a text title asset
 Generates and returns the asset for use in a `core.clip`.
 
 ```
-const asset = title.asset
+const asset = title.asset;
 ```
 
 #### Example

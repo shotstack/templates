@@ -8,6 +8,9 @@ module.exports = {
     podcast: [
         'finance.sd',
     ],
+    slideshow: [
+        'carousel.sd',
+    ],
     subtitle: [
         'basic.sd',
         'fill.sd',
