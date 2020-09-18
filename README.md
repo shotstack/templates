@@ -50,7 +50,7 @@ const track = panel.asset;
 
 Create subtitles
 
-#### `Subtitles(width, height, css, position, x, y, background);`
+#### `const subtitles = new Subtitles(width, height, css, position, x, y, background);`
 
 Create the subtitle component shared by all subtitle text elements.
 
@@ -83,7 +83,7 @@ Adds a subtitle element, a line of text to display for a given period of time.
 Generates and returns the subtitles track for use in a `core.track`.
 
 ```
-const asset = title.asset
+const track = subtitles.track
 ```
 
 #### Example
