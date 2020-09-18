@@ -18,30 +18,30 @@ All the core editing features here
 
 ### Panel
 
-Create a solid rectangle block of colour and adjust its size and position.
+Create a solid rectangle block of colour.
 
-#### `Panel(width, height, color, start, length, position, x, y);`
+#### `const panel = new Panel(width, height, color);`
 
 | Argument | Type | Description |
 |----------|------|-------------|
 | width | integer | width in pixels of the panel |
 | height | integer | height in pixels of the panel |
-| start | float | the start point, in seconds, on the timeline |
-| length | float | the number of seconds the panel should play for |
 | color | string | panel background color using hex notation |
-| position | string | starting position on the video to place panel |
-| x | float | x offset adjustment from the starting position |
-| y | float | y offset adjustment from the starting position |
 
-#### `getTrack()`
 
-Fetches all the panel information as a track ready to be used by core.track().
+#### `getter - asset`
+
+Generates and returns the asset for use in a `core.clip`.
+
+```
+const asset = panel.asset
+```
 
 #### Example
 
 ```
-let panel = new Panel(1024, 720, '#7027D8', 0, 5);
-const track = panel.getTrack();
+const panel = new Panel(1024, 720, '#7027D8');
+const track = panel.asset;
 ```
 
 ---
@@ -126,7 +126,7 @@ Create a text title asset
 
 #### `getter - asset`
 
-Get the title asset to use in a clip, i.e.
+Generates and returns the asset for use in a `core.clip`.
 
 ```
 const asset = title.asset
