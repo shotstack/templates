@@ -101,28 +101,23 @@ Create a text title asset
 
 | Argument | Type | Description |
 |----------|------|-------------|
-| title | string | The title text |
+| title | string | the title text |
 | width | integer | width in pixels of the subtitle container |
 | height | integer | height in pixels of the subtitle container |
-| options | object | Title formatting options |
+| options | object | title formatting options |
 
 ##### Options
 
-`font`: text font
-
-`color`: text colour using hex notation
-
-`size`: text size in pixels (px) or points (pt)
-
-`align`: horizontal alignment, `left`, `right` or `center`
-
-`bold`: set to `true` to make text bold
-
-`underline`: set to `true` to underline text
-
-`italic`: set to `true` to make text italic
-
-`lineHeight`: adjust line-height using %
+| Argument | Description |
+|----------|-------------|
+| font | The title font |
+| color | text colour using hex notation |
+| size | text size in pixels (px) or points (pt) |
+| align | horizontal alignment, `left`, `right` or `center` |
+| bold | set to `true` to make text bold |
+| underline | set to `true` to underline text |
+| italic |  set to `true` to make text italic |
+| lineHeight | adjust line-height using % |
 
 
 #### `getter - asset`
