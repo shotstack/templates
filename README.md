@@ -32,9 +32,9 @@ Create a carousel style animation using images, video and text clips
 | startOnFirstAsset | boolean | set to `false` to start with the first asset off-screen |
 | finishOnLastAsset | boolean | set to `false` to finish with the last asset off-screen  |
 
-#### `addAsset(asset)`
+#### `addAsset(asset, effect)`
 
-Add an asset to the carousel, assets are displayed in the order they are added.
+Add an asset to the carousel, assets are displayed in the order they are added. You can also apply a motion effect for each asset.
 
 ```
 const asset = core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/happy1.jpg');

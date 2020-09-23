@@ -2,7 +2,7 @@
 
 const core = require('../core');
 
-const OPTIMUM_GAP_DURATION = 0.56;
+const OPTIMUM_GAP_DURATION = 0.6;
 
 module.exports = class Carousel {
     constructor(interval, direction, delay = 0, startOnFirstAsset = true, finishOnLastAsset = true) {
@@ -14,8 +14,8 @@ module.exports = class Carousel {
         this.assets = [];
     }
 
-    addAsset(asset) {
-        this.assets.push(asset);
+    addAsset(asset, effect = null) {
+        this.assets.push({ asset, effect });
     }
 
     get track() {
@@ -40,7 +40,7 @@ module.exports = class Carousel {
                 transitionOut = null;
             }
 
-            const clip = core.clip(asset, start, length, null, null, null, null, null, transitionIn, transitionOut);
+            const clip = core.clip(asset.asset, start, length, null, null, null, null, null, transitionIn, transitionOut, asset.effect);
 
             clips.push(clip)
         });
