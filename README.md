@@ -46,7 +46,7 @@ carousel.addAsset(core.assets.image(asset));
 | Argument | Type | Description |
 |----------|------|-------------|
 | asset | core.assets | add an asset to the collection of assets in the carousel |
-| effect | string | add a [motion effect](##Motion Effect) to the asset once it finishes transitioning  |
+| effect | string | add a [motion effect](#motion-effects) to the asset once it finishes transitioning  |
 
 #### `getter - track`
 
@@ -114,7 +114,7 @@ Create the subtitle component shared by all subtitle text elements.
 | width | integer | width in pixels of the subtitle container |
 | height | integer | height in pixels of the subtitle container |
 | css | string | css styling to apply to the subtitle text |
-| position | string | starting position on the video to place text |
+| position | string | starting [position](#positions) on the video to place text |
 | x | float | x offset adjustment from the starting position |
 | y | float | y offset adjustment from the starting position |
 | background | string | text background color using hex notation |
