@@ -46,6 +46,7 @@ carousel.addAsset(core.assets.image(asset));
 | Argument | Type | Description |
 |----------|------|-------------|
 | asset | core.assets | add an asset to the collection of assets in the carousel |
+| effect | string | add a [motion effect](##Motion Effect) to the asset once it finishes transitioning  |
 
 #### `getter - track`
 
@@ -204,3 +205,35 @@ const title = new Title('Video Heading', 450, 100, {
 
 const asset = title.asset;
 ```
+
+------
+
+## Motion Effects
+
+Built in motion effects
+
+| Effect | Description |
+|----------|-------------|
+| slideLeft | slide asset from right to left |
+| slideRight | slide asset from left to right |
+| slideUp | slide asset from bottom to top |
+| slideDown | slide asset from top to bottom |
+| zoomIn | increase the scale of the asset |
+| zoomOut | decrease the scale of the asset |
+
+------
+
+## Positions
+
+Sets the starting position of the clip
+
+| Position | Description |
+|----------|-------------|
+| topRight | top right corner of screen |
+| right | right middle of screen |
+| bottomRight | bottom right corner of screen |
+| bottom | bottom center of screen |
+| bottomLeft | bottom left corner of screen |
+| left | left middle of screen |
+| topLeft | top left corner of screen |
+| center | center of screen (default) |
