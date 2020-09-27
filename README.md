@@ -169,6 +169,7 @@ Create a text title asset
 | title | string | the title text |
 | width | integer | width in pixels of the text area |
 | height | integer | height in pixels of the text area |
+| position | the starting [position](#positions) within the text area to place text |
 | options | object | title formatting options |
 
 ##### Options
