@@ -31,7 +31,7 @@ const generateTemplateJson = () => {
     const lowerThirdClip = core.clip(lowerThirdAsset, 0, CLIP_LENGTH, null, null, 'topLeft', 0, -0.15, 'carouselRight');
     const lowerThirdTrack = core.track([lowerThirdClip]);
 
-    const title = new Title('The Finance Show', 450, 100, {
+    const title = new Title('The Finance Show', 450, 100, null, {
         font: openSans.family,
         color: '#ffffff',
         size: '34px',
@@ -44,7 +44,7 @@ const generateTemplateJson = () => {
     /**
      * Main Heading
      */
-    const heading = new Title('Podcast Heading', 450, 100, {
+    const heading = new Title('Podcast Heading', 450, 100, null, {
         font: openSansExtraBold.family,
         color: '#ffffff',
         size: '38px',
@@ -57,7 +57,7 @@ const generateTemplateJson = () => {
     /**
      * Guest Name
      */
-    const guest = new Title('Mr John Smith', 400, 50, {
+    const guest = new Title('Mr John Smith', 400, 50, null, {
         font: openSansBold.family,
         color: '#d2bb8f',
         size: '28px',
@@ -71,7 +71,7 @@ const generateTemplateJson = () => {
     /**
      * Guest Subtitle
      */
-    const summary = new Title('Head of Global Derivatives, Eagle Corporate', 500, 40, {
+    const summary = new Title('Head of Global Derivatives, Eagle Corporate', 500, 40, null, {
         font: openSans.family,
         color: '#ffffff',
         size: '22px',

@@ -3,10 +3,11 @@
 const core = require('../core');
 
 module.exports = class Title {
-    constructor(text, width = 600, height = 300, options) {
+    constructor(text, width = 600, height = 300, position = null, options = null) {
         this.width = width;
         this.height = height;
         this.text = text;
+        this.position = (position) ? position : 'center';
         this.options = options;
     }
 
@@ -24,7 +25,9 @@ module.exports = class Title {
             `<p>${this.text}</p>`,
             `p { ${font} color: ${color}; ${size} ${align} ${bold} ${underline} ${italic} ${lineHeight} }`,
             this.width,
-            this.height
+            this.height,
+            null,
+            this.position
         );
 
         return asset;
