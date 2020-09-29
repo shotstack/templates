@@ -53,11 +53,11 @@ Create a carousel style animation using images, video and text clips
 
 #### `addAsset(asset, effect)`
 
-Add an asset to the carousel, assets are displayed in the order they are added. You can also apply a motion effect for each asset.
+Add an asset to the carousel, assets are displayed in the order they are added. You can optionally apply a motion effect to each asset.
 
 ```
 const asset = core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/happy1.jpg');
-carousel.addAsset(core.assets.image(asset));
+carousel.addAsset(core.assets.image(asset, 'slideLeft'));
 ```
 
 ##### Params
@@ -78,12 +78,13 @@ const track = carousel.track;
 #### Example
 
 ```
-let subtitles = new Subtitles(650, 80, `p { font-family: "Open Sans"; }`, 'bottom', 0, 0.01);
+const carousel = new Carousel(2, 'left');
 
-subtitles.addSubtitle(`<p>This is the first subtitle</p>`, 0, 5);
-subtitles.addSubtitle(`<p>This is the second subtitle</p>`, 5, 5);
+carousel.addAsset(core.assets.image('https://shotstack.io/images/photo1.jpg', 'slideLeft'));
+carousel.addAsset(core.assets.image('https://shotstack.io/images/photo2.jpg', 'slideLeft'));
+carousel.addAsset(core.assets.image('https://shotstack.io/images/photo3.jpg', 'slideLeft'));
 
-const track = subtitles.track;
+const track = carousel.track;
 ```
 
 ---
@@ -113,7 +114,7 @@ const asset = panel.asset;
 
 ```
 const panel = new Panel(1024, 720, '#7027D8');
-const track = panel.asset;
+const asset = panel.asset;
 ```
 
 ---
@@ -165,7 +166,7 @@ const track = subtitles.track;
 #### Example
 
 ```
-let subtitles = new Subtitles(650, 80, `p { font-family: "Open Sans"; }`, 'bottom', 0, 0.01);
+const subtitles = new Subtitles(650, 80, `p { font-family: "Open Sans"; }`, 'bottom', 0, 0.01);
 
 subtitles.addSubtitle(`<p>This is the first subtitle</p>`, 0, 5);
 subtitles.addSubtitle(`<p>This is the second subtitle</p>`, 5, 5);
