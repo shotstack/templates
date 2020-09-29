@@ -1,20 +1,39 @@
-# SHOTSTACK TEMPLATES
+# SHOTSTACK TEMPLATES (ALPHA)
 
-A template generator and collection of templates.
+A template generator/framework for the [Shotstack API](https://shotstack.io) and collection of templates.
 
+**Note:** This project is released as **ALPHA** and is in the very early stages 
+of development. Be advised that the codebase may change without notice, including breaking 
+changes. We value any suggestions and opening issues and will take all feedback onboard.
 
-### Generate Templates
+## Requirements
+
+- NodeJS 8+
+
+## Install
+
+```
+npm install
+```
+
+## Generate Templates
 
 ```
 npm run build
 ```
 
+Templates are generated as JSON files in the build folder. For details on how to submit the JSON to the 
+API check out the [docs](https://shotstack.gitbook.io/docs/guides/getting-started) or 
+our [Hello World](https://shotstack.io/learn/hello-world/) tutorial.
+
 ## Core
 
-All the core editing features here
+All the core editing features here...
 
 
 ## Components
+
+A collection of off the shelf components covering common use cases.
 
 ### Carousel
 
