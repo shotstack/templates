@@ -80,9 +80,9 @@ const track = carousel.track;
 ```
 const carousel = new Carousel(2, 'left');
 
-carousel.addAsset(core.assets.image('https://shotstack.io/images/photo1.jpg', 'slideLeft'));
-carousel.addAsset(core.assets.image('https://shotstack.io/images/photo2.jpg', 'slideLeft'));
-carousel.addAsset(core.assets.image('https://shotstack.io/images/photo3.jpg', 'slideLeft'));
+carousel.addAsset(core.assets.image('https://shotstack.io/images/photo1.jpg'), 'slideLeft');
+carousel.addAsset(core.assets.image('https://shotstack.io/images/photo2.jpg'), 'slideLeft');
+carousel.addAsset(core.assets.image('https://shotstack.io/images/photo3.jpg'), 'slideLeft');
 
 const track = carousel.track;
 ```
