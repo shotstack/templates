@@ -160,7 +160,7 @@ const generateTemplateJson = () => {
         align: 'center',
         bold: true,
     });
-    const slide5CopyClip = core.clip(slide5Copy.asset, (SLIDE_LENGTH * 4) + 0.5, SLIDE_LENGTH - 1, null, null, 'top', 0, -0.1, 'slideUp');
+    const slide5CopyClip = core.clip(slide5Copy.asset, (SLIDE_LENGTH * 4) + 0.5, SLIDE_LENGTH - 0.5, null, null, 'top', 0, -0.1, 'slideUp');
     const slide5CopyTrack = core.track([slide5CopyClip]);
 
     /** Url */
@@ -170,7 +170,7 @@ const generateTemplateJson = () => {
         size: '60px',
         align: 'center',
     });
-    const slide5UrlClip = core.clip(slide5Url.asset, (SLIDE_LENGTH * 4) + 0.5, SLIDE_LENGTH - 1, null, null, 'top', 0, -0.12, 'slideDown');
+    const slide5UrlClip = core.clip(slide5Url.asset, (SLIDE_LENGTH * 4) + 0.5, SLIDE_LENGTH - 0.5, null, null, 'top', 0, -0.12, 'slideDown');
     const slide5UrlTrack = core.track([slide5UrlClip]);
 
     /**
