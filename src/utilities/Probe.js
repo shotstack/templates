@@ -38,8 +38,8 @@ class Probe {
                     resolve(response)
                 })
                 .catch((err) => {
-                    console.error("Something terrible happened: ", err)
-                    reject(err)
+                    console.error("Could not read file: ", err)
+                    reject()
                 })
         })
     }
