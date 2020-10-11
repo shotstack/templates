@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "exiftool-vendored": "^12.2.0",
     "shotstack-sdk": "0.0.19"
   }
 }
