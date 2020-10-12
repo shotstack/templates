@@ -229,6 +229,57 @@ const asset = title.asset;
 
 ------
 
+## Utilities
+
+Helpers and utilities to use while creating templates and video edits.
+
+### Probe
+
+Get details of a local or remote media file. Reads the EXIF information of the file and returns 
+useful statistics. Uses [Exiftool-vendored](https://www.npmjs.com/package/exiftool-vendored) under the hood.
+
+#### Usage
+
+```
+const Probe = require('./src/utilities/Probe');
+const probe = new Probe();
+
+probe.inspect('photo.jpg').then((image) => {
+    console.log(`Image is ${image.getWidth()}px wide by ${image.getHeight()}px high.`);
+    probe.close();
+}).catch((error) => {
+    console.error('An error occurred: ', error);
+    probe.close();
+});
+```
+
+See more examples in [src/examples](./src/examples/).
+
+#### Methods
+
+##### inspect(filename|url)
+
+Accepts a local file or a remote URL. Reads the Exif information and returns a promise object with the following 
+functions and parameters:
+
+| Parameter | Type | Description |
+|----------|------|-------------|
+| tags | array | array of all available tags (EXIF data) for the media file |
+| getWidth() | function | returns the width in pixels of the media asset |
+| getHeight() | function | returns the height in pixels of the media asset |
+| getDuration() | function | returns the length in seconds of a video asset |
+| getRotation() | function | returns the rotation the media asset |
+| get(tag) | function | returns the media asset value for the specified tag |
+
+##### close()
+
+Closes the the probe process (exiftool).
+
+It is important to close the Probe process when finished or your script might hang.
+
+
+------
+
 ## Motion Effects
 
 Built in motion effects
