@@ -257,7 +257,7 @@ See more examples in [src/examples](./src/examples/).
 
 #### Methods
 
-##### inspect(filename|url)
+#### `inspect(filename|url)`
 
 Accepts a local file or a remote URL. Reads the Exif information and returns a promise object with the following 
 functions and parameters:
@@ -271,7 +271,7 @@ functions and parameters:
 | getRotation() | function | returns the rotation the media asset |
 | get(tag) | function | returns the media asset value for the specified tag |
 
-##### close()
+#### `close()`
 
 Closes the the probe process (exiftool).
 
