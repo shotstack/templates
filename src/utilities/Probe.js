@@ -63,27 +63,3 @@ module.exports = class Probe {
         exiftool.end()
     }
 }
-
-// module.exports.Probe = Probe;
-
-
-// const probe = new Probe();
-// probe.inspect('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/business-man.jpg').then((tags) => {
-//     probe.close()
-//     console.log(tags.get('ImageWidth'))
-// }).catch((err) => {
-//     console.log('fail')
-// })
-
-// const probe = new Probe();
-// Promise.all([
-//     probe.inspect('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/business-man.jpg'),
-//     probe.inspect('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/footage/cars-tunnel.mp4')
-// ]).then(function (response) {
-//     probe.close();
-//     const [image, video] = response
-//     console.log(image.getWidth())
-//     console.log(video.getDuration())
-// }).catch((err) => {
-//     console.log('fail')
-// })
