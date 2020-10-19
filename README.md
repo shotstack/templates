@@ -56,8 +56,8 @@ Create a carousel style animation using images, video and text clips
 Add an asset to the carousel, assets are displayed in the order they are added. You can optionally apply a motion effect to each asset.
 
 ```
-const asset = core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/happy1.jpg');
-carousel.addAsset(core.assets.image(asset, 'slideLeft'));
+const asset = core.assets.image('https://shotstack.io/images/photo1.jpg');
+carousel.addAsset(asset, 'slideLeft');
 ```
 
 ##### Params
