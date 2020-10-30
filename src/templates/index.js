@@ -20,5 +20,8 @@ module.exports = {
         'fill.sd',
         'strip.sd',
         'color.sd',
+    ],
+    text: [
+        'kinetic.sd',
     ]
 };

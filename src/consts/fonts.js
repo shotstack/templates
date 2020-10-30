@@ -49,6 +49,11 @@ const openSansExtraBold = {
     family: 'Open Sans ExtraBold'
 };
 
+const permanentMarker = {
+    src: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/fonts/PermanentMarker-Regular.ttf',
+    family: 'Permanent Marker'
+};
+
 module.exports = {
     indieFlowerRegular,
     kanitExtraBold,
@@ -58,5 +63,6 @@ module.exports = {
     openSansExtraBold,
     montserrat,
     montserratBold,
-    montserratBlack
+    montserratBlack,
+    permanentMarker
 }
