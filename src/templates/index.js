@@ -14,6 +14,7 @@ module.exports = {
     slideshow: [
         'carousel.sd',
         'carousel-vertical.sd',
+        'kenburns.sd',
     ],
     subtitle: [
         'basic.sd',
