@@ -16,6 +16,9 @@ module.exports = {
         'carousel-vertical.sd',
         'kenburns.sd',
     ],
+    realestate: [
+      'slideshow.sd'
+    ],
     subtitle: [
         'basic.sd',
         'fill.sd',
