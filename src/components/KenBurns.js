@@ -4,14 +4,16 @@ const core = require('../core');
 const string = require('../helpers/string');
 
 module.exports = class KenBurns {
-  constructor(interval, transition = null, speed = null) {
+  constructor(interval, speed = null, transitionIn = null, transitionOut = null) {
     this.interval = interval;
-    this.transition = transition;
+    this.transitionIn = transitionIn;
+    this.transitionOut = transitionOut;
     this.speed = speed;
     this.assets = [];
+    this.timelineStart = 0;
   }
 
-  addAsset(asset, direction = 'in') {
+  addAsset(asset, direction = 'in', transitionIn = null, transitionOut = null) {
     let effect = null;
 
     if (['in', 'out'].includes(direction)) {
@@ -22,17 +24,23 @@ module.exports = class KenBurns {
       effect = 'slide' + string.capitalize(direction) + string.capitalize(this.speed)
     }
     
-    this.assets.push({ asset, effect });
+    this.assets.push({ asset, effect, transitionIn, transitionOut });
+  }
+
+  set startAt(time) {
+    this.timelineStart = time;
   }
 
   get track() {
     const clips = [];
 
     this.assets.forEach((asset, index) => {
-      let start = this.interval * index;
-      let length = this.interval;
+      const clipStart = this.interval * index + this.timelineStart;
+      const length = this.interval;
+      const transitionIn = asset.transitionIn || this.transitionIn;
+      const transitionOut = asset.transitionOut || this.transitionOut;
 
-      const clip = core.clip(asset.asset, start, length, null, null, null, null, null, this.transition, this.transition, asset.effect);
+      const clip = core.clip(asset.asset, clipStart, length, null, null, null, null, null, transitionIn, transitionOut, asset.effect);
 
       clips.push(clip)
     });

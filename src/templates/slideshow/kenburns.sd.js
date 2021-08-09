@@ -4,7 +4,7 @@ const core = require('../../core');
 const KenBurns = require('../../components/KenBurns');
 
 const generateTemplateJson = () => {
-  const kenburns = new KenBurns(2, null, 'fast');
+  const kenburns = new KenBurns(2, 'fast');
   kenburns.addAsset(core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/happy1.jpg'), 'in');
   kenburns.addAsset(core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/happy2.jpg'), 'out');
   kenburns.addAsset(core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/happy3.jpg'), 'left');
