@@ -15,7 +15,7 @@ const removeEmptyOrNull = (obj) => {
 };
 
 const getJson = (data) => {
-    return JSON.stringify(removeEmptyOrNull(data), null, 2)
+    return JSON.stringify(removeEmptyOrNull(data), null, 4)
 }
 
 const makeDirectory = async (directory) => {

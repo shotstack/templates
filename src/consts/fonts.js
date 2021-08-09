@@ -1,5 +1,3 @@
-
-
 const indieFlowerRegular = {
     src: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/fonts/IndieFlower-Regular.ttf',
     family: 'Indie Flower'
@@ -15,6 +13,16 @@ const latoBold = {
     src: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/fonts/Lato-Bold.ttf',
     family: 'Lato',
     style: 'bold'
+};
+
+const manropeExtraBold = {
+  src: 'https://templates.shotstack.io/basic/asset/font/manrope-extrabold.ttf',
+  family: 'Manrope ExtraBold'
+};
+
+const manropeLight = {
+  src: 'https://templates.shotstack.io/basic/asset/font/manrope-light.ttf',
+  family: 'Manrope Light'
 };
 
 const montserrat = {
@@ -61,6 +69,8 @@ module.exports = {
     openSans,
     openSansBold,
     openSansExtraBold,
+    manropeExtraBold,
+    manropeLight,
     montserrat,
     montserratBold,
     montserratBlack,
