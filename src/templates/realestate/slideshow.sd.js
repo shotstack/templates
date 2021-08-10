@@ -24,6 +24,9 @@ const theme = {
   soundtrack: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/music/unminus/ambisax.mp3'
 }
 
+// TODO: Adapt to different resolutions: 1080, HD, SD
+// TODO: Replace assets with stock
+
 const generateTemplateJson = () => {
   /**
    * Main Heading
@@ -115,12 +118,12 @@ const generateTemplateJson = () => {
    * Kenburns image slideshow
    */
   const kenburns = new KenBurns(6, 'slow');
-  kenburns.addAsset(core.assets.image('https://shotstack-content.s3-ap-southeast-2.amazonaws.com/realestate-delete-me/home-1.jpg'), 'in', 'fade');
-  kenburns.addAsset(core.assets.image('https://shotstack-content.s3-ap-southeast-2.amazonaws.com/realestate-delete-me/home-2.jpg'), 'left');
-  kenburns.addAsset(core.assets.image('https://shotstack-content.s3-ap-southeast-2.amazonaws.com/realestate-delete-me/home-3.jpg'), 'right');
-  kenburns.addAsset(core.assets.image('https://shotstack-content.s3-ap-southeast-2.amazonaws.com/realestate-delete-me/home-4.jpg'), 'up');
-  kenburns.addAsset(core.assets.image('https://shotstack-content.s3-ap-southeast-2.amazonaws.com/realestate-delete-me/home-6.jpg'), 'left');
-  kenburns.addAsset(core.assets.image('https://shotstack-content.s3-ap-southeast-2.amazonaws.com/realestate-delete-me/home-1.jpg'), 'in');
+  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate1.jpg'), 'in', 'fade');
+  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate2.jpg'), 'left');
+  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate3.jpg'), 'right');
+  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate4.jpg'), 'up');
+  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate5.jpg'), 'left');
+  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate1.jpg'), 'in');
   kenburns.startAt = 0;
 
   /**
