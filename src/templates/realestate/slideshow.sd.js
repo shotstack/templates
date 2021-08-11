@@ -24,14 +24,33 @@ const theme = {
   soundtrack: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/music/unminus/ambisax.mp3'
 }
 
+const content = {
+  address: '192 STOREY STREET',
+  suburb: 'MAROUBRA, NSW 2035',
+  sale: 'AUCTION 22 OCTOBER',
+  type: 'HOUSE',
+  beds: '4',
+  baths: '2',
+  cars: '1',
+  image1: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate1.jpg',
+  image2: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate2.jpg',
+  image3: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate3.jpg',
+  image4: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate4.jpg',
+  image5: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate5.jpg',
+  agent: 'JEREMY SIMPSON',
+  logo: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/logos/real-estate-white.png',
+  headshot: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/real-estate-agent-male.jpg',
+  mobile: '0424 998 776',
+  email: 'jeremy@blockrealestate.co'
+}
+
 // TODO: Adapt to different resolutions: 1080, HD, SD
-// TODO: Replace assets with stock
 
 const generateTemplateJson = () => {
   /**
    * Main Heading
    */
-  const headingAsset = new Title('192 STOREY STREET', 360, 200, 'bottom', {
+  const headingAsset = new Title(content.address, 360, 200, 'bottom', {
     font: theme.font.primary.family,
     color: theme.color.primary,
     size: '40px',
@@ -43,7 +62,7 @@ const generateTemplateJson = () => {
   /**
    * Sub Heading
    */
-   const subHeadingAsset = new Title('MAROUBRA, NSW 2035', 360, 100, 'top', {
+   const subHeadingAsset = new Title(content.suburb, 360, 100, 'top', {
     font: theme.font.secondary.family,
     color: theme.color.secondary,
     size: '22px',
@@ -55,7 +74,7 @@ const generateTemplateJson = () => {
   /**
    * Sale Type Heading (i.e. Auction)
    */
-   const saleHeadingAsset = new Title('AUCTION 22 OCTOBER', 360, 100, 'top', {
+   const saleHeadingAsset = new Title(content.sale, 360, 100, 'top', {
     font: theme.font.primary.family,
     color: theme.color.primary,
     size: '22px',
@@ -67,7 +86,7 @@ const generateTemplateJson = () => {
   /**
    * Property Type (i.e. House, Apartment)
    */
-  const typeHeadingAsset = new Title('HOUSE', 150, 24, 'top', {
+  const typeHeadingAsset = new Title(content.type, 150, 24, 'top', {
     font: theme.font.secondary.family,
     color: theme.color.secondary,
     size: '17px',
@@ -118,12 +137,12 @@ const generateTemplateJson = () => {
    * Kenburns image slideshow
    */
   const kenburns = new KenBurns(6, 'slow');
-  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate1.jpg'), 'in', 'fade');
-  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate2.jpg'), 'left');
-  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate3.jpg'), 'right');
-  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate4.jpg'), 'up');
-  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate5.jpg'), 'left');
-  kenburns.addAsset(core.assets.image('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate1.jpg'), 'in');
+  kenburns.addAsset(core.assets.image(content.image1), 'in', 'fade');
+  kenburns.addAsset(core.assets.image(content.image2), 'left');
+  kenburns.addAsset(core.assets.image(content.image3), 'right');
+  kenburns.addAsset(core.assets.image(content.image4), 'up');
+  kenburns.addAsset(core.assets.image(content.image5), 'left');
+  kenburns.addAsset(core.assets.image(content.image1), 'in');
   kenburns.startAt = 0;
 
   /**
@@ -161,7 +180,7 @@ const generateTemplateJson = () => {
    const headshotMask = core.assets.luma('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/luma-mattes/circle.jpg');
    const headshotMaskClip = core.clip(headshotMask, 30, 6);
 
-   const headshotAsset = core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/real-estate-agent-male.jpg');
+   const headshotAsset = core.assets.image(content.headshot);
    const headshotClip = core.clip(headshotAsset, 30, 6, 'none', 0.4, null, 0, 0.22, 'fade');
    const headshotTrack = core.track([
        headshotMaskClip,
@@ -171,7 +190,7 @@ const generateTemplateJson = () => {
    /**
    * Outro Agent Name
    */
-  const agentNameAsset = new Title('JEREMY SIMPSON', 400, 100, null, {
+  const agentNameAsset = new Title(content.agent, 400, 100, null, {
     font: theme.font.primary.family,
     color: theme.color.primary,
     size: '26px',
@@ -182,13 +201,13 @@ const generateTemplateJson = () => {
   /**
    * Outro Logo
    */
-  const logoAsset = core.assets.image('https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/logos/real-estate-white.png');
+  const logoAsset = core.assets.image(content.logo);
   const logoClip = core.clip(logoAsset, 30, 6, 'none', 0.26, null, 0, -0.08, 'fade');
 
   /**
    * Outro Agent Contacts
    */
-  const agentContactsAsset = new Title('0424 998 776<br>jeremy@blockrealestate.co', 400, 100, null, {
+  const agentContactsAsset = new Title(`${content.mobile}<br>${content.email}`, 400, 100, null, {
     font: theme.font.secondary.family,
     color: '#e6e6e6',
     size: '18px',
