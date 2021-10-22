@@ -1,17 +1,14 @@
 'use strict'
 
 const core = require('../../core');
-const { manropeExtraBold, manropeLight } = require('../../consts/fonts');
 const { BED, BATH, CAR } = require('../../consts/icons/slimline');
-const { ARROW_SHARP } = require('../../consts/overlays/basic');
-const { BLACK } = require('../../consts/colors');
 const Icon = require('../../components/Icon');
 const KenBurns = require('../../components/KenBurns');
 const Title = require('../../components/Title');
 const timelineHelper = require('../../helpers/timeline');
 const scaleHelper = require('../../helpers/scale');
 
-const RESOLUTION = 'sd';
+const RESOLUTION = '1080';
 const ICONS_SIZES = {
   'sd': '26px',
   'hd': '32px',
@@ -20,38 +17,44 @@ const ICONS_SIZES = {
 
 const theme = {
   color: {
-    primary: '#f0c20c',
-    secondary: '#ffffff'
+    primary: '{{PRIMARY_COLOR}}',
+    secondary: '{{SECONDARY_COLOR}}'
   },
   font: {
-    primary: manropeExtraBold,
-    secondary: manropeLight
+    primary: {
+      family: '{{PRIMARY_FONT}}',
+      src: '{{PRIMARY_FONT_SRC}}'
+    },
+    secondary: {
+      family: '{{SECONDARY_FONT}}',
+      src: '{{SECONDARY_FONT_SRC}}'
+    }
   },
   overlay: {
-    style: ARROW_SHARP,
-    color: BLACK
+    style: '{{OVERLAY_STYLE}}',
+    color: '{{OVERLAY_COLOR}}'
   },
-  soundtrack: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/music/unminus/ambisax.mp3'
+  soundtrack: '{{SOUNDTRACK}}'
 }
 
 const content = {
-  address: '192 STOREY STREET',
-  suburb: 'MAROUBRA, NSW 2035',
-  sale: 'AUCTION',
-  type: 'HOUSE',
-  beds: '4',
-  baths: '2',
-  cars: '1',
-  image1: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate1.jpg',
-  image2: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate2.jpg',
-  image3: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate3.jpg',
-  image4: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate4.jpg',
-  image5: 'https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/realestate5.jpg',
-  agent: 'JEREMY SIMPSON',
-  logo: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/logos/real-estate-white.png',
-  headshot: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/images/real-estate-agent-male.jpg',
-  mobile: '0424 998 776',
-  email: 'jeremy@blockrealestate.co'
+  address: '{{ADDRESS_1}}',
+  suburb: '{{ADDRESS_2}}',
+  sale: '{{SALE_TYPE}}',
+  type: '{{PROPERTY_TYPE}}',
+  beds: '{{BEDS}}',
+  baths: '{{BATHS}}',
+  cars: '{{CARS}}',
+  image1: '{{IMAGE_1}}',
+  image2: '{{IMAGE_2}}',
+  image3: '{{IMAGE_3}}',
+  image4: '{{IMAGE_4}}',
+  image5: '{{IMAGE_5}}',
+  agent: '{{AGENT_NAME}}',
+  logo: '{{LOGO}}',
+  headshot: '{{HEADSHOT}}',
+  mobile: '{{PHONE}}',
+  email: '{{EMAIL}}'
 }
 
 const generateTemplateJson = () => {
@@ -115,7 +118,7 @@ const generateTemplateJson = () => {
   const bathIcon = core.clip(bathIconAsset.asset, 1.4, 4, 'none', null, 'left', 0.13, -0.025, 'fade', 'fade');
   const carIcon = core.clip(carIconAsset.asset, 1.4, 4, 'none', null, 'left', 0.205, -0.025, 'fade', 'fade');
 
-  const bedIconTextAsset = new Title('4', scaleHelper.scale(36, RESOLUTION), scaleHelper.scale(26, RESOLUTION), 'center', {
+  const bedIconTextAsset = new Title(content.beds, scaleHelper.scale(36, RESOLUTION), scaleHelper.scale(26, RESOLUTION), 'center', {
     font: theme.font.primary.family,
     color: theme.color.secondary,
     size: scaleHelper.scale(18, RESOLUTION) + 'px',
@@ -123,7 +126,7 @@ const generateTemplateJson = () => {
   });
   const bedIconText = core.clip(bedIconTextAsset.asset, 1.4, 4, null, null, 'left', 0.09, -0.025, 'fade', 'fade');
 
-  const bathIconTextAsset = new Title('2', scaleHelper.scale(36, RESOLUTION), scaleHelper.scale(26, RESOLUTION), 'center', {
+  const bathIconTextAsset = new Title(content.baths, scaleHelper.scale(36, RESOLUTION), scaleHelper.scale(26, RESOLUTION), 'center', {
     font: theme.font.primary.family,
     color: theme.color.secondary,
     size: scaleHelper.scale(18, RESOLUTION) + 'px',
@@ -131,7 +134,7 @@ const generateTemplateJson = () => {
   });
   const bathIconText = core.clip(bathIconTextAsset.asset, 1.4, 4, null, null, 'left', 0.165, -0.025, 'fade', 'fade');
 
-  const carIconTextAsset = new Title('1', scaleHelper.scale(36, RESOLUTION), scaleHelper.scale(26, RESOLUTION), 'center', {
+  const carIconTextAsset = new Title(content.cars, scaleHelper.scale(36, RESOLUTION), scaleHelper.scale(26, RESOLUTION), 'center', {
     font: theme.font.primary.family,
     color: theme.color.secondary,
     size: scaleHelper.scale(18, RESOLUTION) + 'px',

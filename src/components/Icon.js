@@ -6,11 +6,11 @@ const LIBRARY_URL = 'https://templates.shotstack.io';
 const LIBRARY_ICONS_PATH = 'basic/asset/image/icon'
 
 module.exports = class Icon {
-    constructor(icon, style = 'slimline', color = 'white', size = '24px') {
+    constructor(icon, size = '26px', style = 'slimline', color = 'white') {
         this.icon = icon;
+        this.size = size;
         this.style = style;
         this.color = color;
-        this.size = size;
     }
 
     get asset() {

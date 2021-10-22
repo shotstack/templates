@@ -12,7 +12,8 @@ module.exports = {
     'startup.sd',
   ],
   realestate: [
-    'slideshow.sd'
+    'slideshow.sd',
+    'slideshow.theme.sd',
   ],
   slideshow: [
     'carousel.sd',

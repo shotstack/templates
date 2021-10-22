@@ -1,3 +1,18 @@
+const barlowRegular = {
+  src: 'https://templates.shotstack.io/basic/asset/font/barlow-regular.ttf',
+  family: 'Barlow'
+};
+
+const barlowExtraBold = {
+  src: 'https://templates.shotstack.io/basic/asset/font/barlow-extrabold.ttf',
+  family: 'Barlow ExtraBold'
+};
+
+const barlowExtraLight = {
+  src: 'https://templates.shotstack.io/basic/asset/font/barlow-extrabold.ttf',
+  family: 'Barlow ExtraLight'
+};
+
 const indieFlowerRegular = {
     src: 'https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/fonts/IndieFlower-Regular.ttf',
     family: 'Indie Flower'
@@ -62,6 +77,31 @@ const permanentMarker = {
     family: 'Permanent Marker'
 };
 
+const ralewayExtraBold = {
+  src: 'https://templates.shotstack.io/basic/asset/font/raleway-extrabold.ttf',
+  family: 'Raleway ExtraBold'
+};
+
+const ralewayExtraLight = {
+  src: 'https://templates.shotstack.io/basic/asset/font/raleway-extralight.ttf',
+  family: 'Raleway ExtraLight'
+};
+
+const robotoSlab = {
+  src: 'https://templates.shotstack.io/basic/asset/font/robotoslab-regular.ttf',
+  family: 'Roboto Slab'
+};
+
+const robotoSlabBlack = {
+  src: 'https://templates.shotstack.io/basic/asset/font/robotoslab-black.ttf',
+  family: 'Roboto Slab Black'
+};
+
+const robotoSlabLight = {
+  src: 'https://templates.shotstack.io/basic/asset/font/robotoslab-light.ttf',
+  family: 'Roboto Slab Light'
+};
+
 module.exports = {
     indieFlowerRegular,
     kanitExtraBold,
@@ -74,5 +114,10 @@ module.exports = {
     montserrat,
     montserratBold,
     montserratBlack,
-    permanentMarker
+    permanentMarker,
+    ralewayExtraBold,
+    ralewayExtraLight,
+    robotoSlab,
+    robotoSlabBlack,
+    robotoSlabLight,
 }
